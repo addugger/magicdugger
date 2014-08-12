@@ -1,5 +1,5 @@
 <?php
-require_once("../../scripts/dbConn.php");
+#Only to be included by insertCards (which previously includes dbConn.php).
 
 $chkSetStmt = "SELECT SET_ID FROM MTG_SETS WHERE SET_ABR = ':setAbr'";
 
@@ -36,6 +36,7 @@ $insertSetStmt = $conn -> prepare(
 	)"
 );
 
+//check if set is already in database
 function hasSet($setAbr)
 {
 	global $conn, $chkSetStmt;
@@ -48,6 +49,7 @@ function hasSet($setAbr)
 	return $hasSet;
 }
 
+//insert set into database
 function insertSet($set)
 {
 	global $conn, $insertSetStmt;
@@ -71,16 +73,14 @@ function insertSet($set)
 $sets = json_decode(file_get_contents("http://api.mtgdb.info/sets/"), true);
 
 $count = 0;
+$setArray = array();
 
 foreach ($sets as $set)
 {
 	if (!hasSet($set["id"]))
 	{
 		insertSet($set);
-		echo($set["id"] . " inserted.<br>");
-		$count++;
+		array_push($setArray, $set["id"]);
 	}
 }
-echo($count);
-
 ?>
