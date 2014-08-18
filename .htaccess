@@ -9,3 +9,5 @@ FileETag None
 Header unset Pragma
 </FilesMatch>
 # End cache control #
+
+Deny from all
