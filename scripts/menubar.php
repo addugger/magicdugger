@@ -16,16 +16,11 @@ $(document).ready(function(){
 <style>
 	.ddsmoothmenu {
 		height: 30px;
-		margin-right: 0px;
 	}
 
 </style>
 <div id="menubar" class="ddsmoothmenu">
 	<ul>
 		<li><a href="/MagicDugger">Home</a></li>
-		<li>
-			<a href=#>Test</a>
-			<ul><li><a href=#>Test Sub</a></li></ul>
-		</li>
 	</ul>
 </div>
