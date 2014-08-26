@@ -8,11 +8,16 @@
 		
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+		<script src="index.js"></script>
 		
 		<title>MagicDugger</title>
 	</head>
 	<body>
 		<?php include_once("scripts/banner.php")?>
 		<?php include_once("scripts/menubar.php")?>
+		
+		<div id="searchDiv">
+			<input type="text" id="searchText">
+		</div>
 	</body>
 </html>
