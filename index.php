@@ -18,6 +18,7 @@
 		
 		<div id="searchDiv">
 			<input type="text" id="searchText">
+			<a href=# id="searchButton">SEARCH</a>
 		</div>
 	</body>
 </html>

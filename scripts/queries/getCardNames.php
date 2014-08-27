@@ -19,7 +19,8 @@ if (isset($_GET["term"]))
 		{
 			$curRs = array();
 			$curRs["label"] = "$row[CRD_NAME] ($row[SET_NAME])";
-			$curRs["value"] = "$row[CRD_ID]";
+			$curRs["value"] = "$row[CRD_NAME] ($row[SET_NAME])";
+			$curRs["crdId"] = "$row[CRD_ID]";
 			array_push($results, $curRs);
 		}
 		echo(json_encode($results));

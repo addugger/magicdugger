@@ -17,12 +17,10 @@ $("body").ready(function()
 						response($.parseJSON(data));
 					}
 				});
-//				$.get("scripts/queries/getCardNames.php?term=" + request.term, function(data, request)
-//					{
-//						alert($.parseJSON(data));
-//						request($.parseJSON(data));
-//					}
-//				);
+			},
+			select: function(event, ui)
+			{
+				$("#searchText").attr("data-card-id", ui.item.crdId);
 			},
 			minLength: 3
 		}
