@@ -3,11 +3,13 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		
-		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css" />
+		<link rel="stylesheet" href=//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css>
+		<link rel="stylesheet" href=css/combobox.css>
 		<link rel="stylesheet" href=css/magicdugger.css>
 		
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+		<script src="scripts/magicDuggerCombobox.js"></script>
 		<script src="index.js"></script>
 		
 		<title>MagicDugger</title>
@@ -17,8 +19,11 @@
 		<?php include_once("scripts/menubar.php")?>
 		
 		<div id="searchDiv">
-			<input type="text" id="searchText">
-			<a href=# id="searchButton">SEARCH</a>
+<!-- 			<input type="text" id="searchText"> -->
+			<div class="ui-widget">
+				<select id="searchCombo"><option val="">Start typing card name...</option></select>
+			</div>
+<!-- 			<button id="searchButton" title="select a card to enable">GO</button> -->
 		</div>
 	</body>
 </html>

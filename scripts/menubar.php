@@ -15,7 +15,7 @@ $(document).ready(function(){
 
 <style>
 	.ddsmoothmenu {
-		height: 30px;
+		height: 32px;
 	}
 
 </style>

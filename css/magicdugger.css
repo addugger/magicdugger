@@ -8,6 +8,34 @@ body {
 	margin: 0px;
 }
 
+button {
+	background: -webkit-linear-gradient(#BDDEFF, #808080, #BDDEFF); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#BDDEFF, #808080, #BDDEFF); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#BDDEFF, #808080, #BDDEFF); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#BDDEFF, #808080, #BDDEFF); /* Standard syntax */
+	border-radius: 10px;
+	border: thin solid black;
+}
+
+button[disabled] {
+	background: #86868E;
+	border-color: #929299;
+}
+
+button:hover:not([disabled]) {
+	background: -webkit-linear-gradient(#D1E8FF, #808080, #D1E8FF); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#D1E8FF, #808080, #D1E8FF); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#D1E8FF, #808080, #D1E8FF); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#D1E8FF, #808080, #D1E8FF); /* Standard syntax */
+}
+
+button:active:not([disabled]) {
+	background: -webkit-linear-gradient(#D1E8FF, #666666, #D1E8FF); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#D1E8FF, #666666, #D1E8FF); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#D1E8FF, #666666, #D1E8FF); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#D1E8FF, #666666, #D1E8FF); /* Standard syntax */
+}
+
 div#searchDiv {
 	text-align: center;
 	margin-top: 50px;
@@ -16,34 +44,27 @@ div#searchDiv {
 	vertical-align: center;
 }
 
-div#searchDiv a {
-	
-	background: -webkit-linear-gradient(#BDDEFF, #808080, #BDDEFF); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(#BDDEFF, #808080, #BDDEFF); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(#BDDEFF, #808080, #BDDEFF); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(#BDDEFF, #808080, #BDDEFF); /* Standard syntax */
-	border-radius: 10px;
+div#searchDiv #searchButton {
 	padding: 10px;
-	border: thin solid black;
-	text-decoration: none !important;
-	color: black;
+	font-size: 30px;
 	font-weight: bold;
-	display: inline-block;
-	height: 45px;
+	height: 60px;
 }
 
-div#searchDiv #searchText {
+div#searchDiv #searchCombo {
 	border-radius: 10px;
-	width: 600px;
 	height: 60px;
 	font-size: 35px;
-	margin-top: -1px;
+}
+
+div#searchDiv .custom-combobox-input {
+	width: 600px;
 }
 
 .ui-autocomplete {
 	font-size: 30px;
 	border-radius: 10px;
-	max-width: 600px;
+	width: 600px;
 	max-height: 400px;
 	overflow-y: auto;
 	overflow-x: hidden;
