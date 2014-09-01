@@ -36,9 +36,30 @@ button:active:not([disabled]) {
 	background: linear-gradient(#D1E8FF, #666666, #D1E8FF); /* Standard syntax */
 }
 
+div#innerResultsDiv {
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+div#outerResultsDiv {
+	width: 100%;
+}
+
+div#innerResultsDiv #cardImage {
+	float: left;
+	width: 230px;
+	height: 315px;
+}
+
+div#innerResultsDiv #cardDetails {
+	display: inline
+}
+
 div#searchDiv {
 	text-align: center;
 	margin-top: 50px;
+	margin-bottom: 100px;
 	font-size: 30px;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	vertical-align: center;

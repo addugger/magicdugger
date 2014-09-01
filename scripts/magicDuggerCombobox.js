@@ -32,6 +32,7 @@
           .appendTo( this.wrapper )
           .val( value )
           .attr( "title", "" )
+          .attr("placeholder", "Start typing card name...")  //this line added to add placeholder text to input
           //ui-corner-right was added to below since show all button was removed.  if including
           //that button, remove ui-corner-right
           .addClass( "custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left ui-corner-right" )

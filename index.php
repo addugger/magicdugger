@@ -19,11 +19,39 @@
 		<?php include_once("scripts/menubar.php")?>
 		
 		<div id="searchDiv">
-<!-- 			<input type="text" id="searchText"> -->
 			<div class="ui-widget">
-				<select id="searchCombo"><option val="">Start typing card name...</option></select>
+				<select id="searchCombo"></select>
 			</div>
-<!-- 			<button id="searchButton" title="select a card to enable">GO</button> -->
+		</div>
+		
+		<div id="outerResultsDiv">
+			<div id="innerResultsDiv">
+				<div id="cardImage"></div>
+				<div id="cardDetails">
+					<table id="detailsTable">
+						<tr>
+							<th>NON FOILS</th>
+							<th>FOILS</th>
+						</tr>
+						<tr>
+							<td><label>HAVE: <span id="haveNonFoils"></span></label></td>
+							<td><label>HAVE: <span id="haveFoils"></span></label></td>
+						</tr>
+						<tr>
+							<td><label>WANT: <span id="wantNonFoils"></span></label></td>
+							<td><label>WANT: <span id="wantFoils"></span></label></td>
+						</tr>
+						<tr>
+							<td><button id="addNonFoil">ADD</button></td>
+							<td><button id="addFoil">ADD</button></td>
+						</tr>
+						<tr>
+							<td><button id="removeNonFoil">REMOVE</button></td>
+							<td><button id="removeFoil">REMOVE</button></td>
+						</tr>
+					</table>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
