@@ -26,29 +26,31 @@
 		
 		<div id="outerResultsDiv">
 			<div id="innerResultsDiv">
-				<div id="cardImage"></div>
+				<div id="cardImage"><img id="crdImg"></div>
 				<div id="cardDetails">
 					<table id="detailsTable">
 						<tr>
 							<th>NON FOILS</th>
 							<th>FOILS</th>
 						</tr>
-						<tr>
-							<td><label>HAVE: <span id="haveNonFoils"></span></label></td>
-							<td><label>HAVE: <span id="haveFoils"></span></label></td>
-						</tr>
-						<tr>
-							<td><label>WANT: <span id="wantNonFoils"></span></label></td>
-							<td><label>WANT: <span id="wantFoils"></span></label></td>
-						</tr>
-						<tr>
-							<td><button id="addNonFoil">ADD</button></td>
-							<td><button id="addFoil">ADD</button></td>
-						</tr>
-						<tr>
-							<td><button id="removeNonFoil">REMOVE</button></td>
-							<td><button id="removeFoil">REMOVE</button></td>
-						</tr>
+						<tbody>
+							<tr>
+								<td><label>HAVE: <span id="haveNonFoils"></span></label></td>
+								<td><label>HAVE: <span id="haveFoils"></span></label></td>
+							</tr>
+							<tr>
+								<td><label>WANT: <span id="wantNonFoils"></span></label></td>
+								<td><label>WANT: <span id="wantFoils"></span></label></td>
+							</tr>
+							<tr>
+								<td class="withButton"><button id="addNonFoil">ADD</button></td>
+								<td class="withButton"><button id="addFoil">ADD</button></td>
+							</tr>
+							<tr>
+								<td class="withButton"><button id="removeNonFoil">REMOVE</button></td>
+								<td class="withButton"><button id="removeFoil">REMOVE</button></td>
+							</tr>
+						</tbody>
 					</table>
 				</div>
 			</div>

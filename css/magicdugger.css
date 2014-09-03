@@ -13,8 +13,9 @@ button {
 	background: -o-linear-gradient(#BDDEFF, #808080, #BDDEFF); /* For Opera 11.1 to 12.0 */
 	background: -moz-linear-gradient(#BDDEFF, #808080, #BDDEFF); /* For Firefox 3.6 to 15 */
 	background: linear-gradient(#BDDEFF, #808080, #BDDEFF); /* Standard syntax */
-	border-radius: 10px;
+	border-radius: 5px;
 	border: thin solid black;
+	padding: 5px;
 }
 
 button[disabled] {
@@ -39,21 +40,24 @@ button:active:not([disabled]) {
 div#innerResultsDiv {
 	margin-left: auto;
 	margin-right: auto;
-	width: 50%;
+	width: 500px;
 }
 
 div#outerResultsDiv {
 	width: 100%;
 }
 
-div#innerResultsDiv #cardImage {
+div#innerResultsDiv #cardImage,
+div#innerResultsDiv #crdImg {
 	float: left;
 	width: 230px;
 	height: 315px;
 }
 
 div#innerResultsDiv #cardDetails {
-	display: inline
+	display: inline;
+	margin: 20px;
+	float: right;
 }
 
 div#searchDiv {
@@ -80,6 +84,38 @@ div#searchDiv #searchCombo {
 
 div#searchDiv .custom-combobox-input {
 	width: 600px;
+}
+
+table#detailsTable {
+	border-collapse: collapse;
+	font-family: Verdana, Geneva, sans-serif;
+	background: -webkit-linear-gradient(#A5B0C2, #B7C3D7); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#A5B0C2, #B7C3D7); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#A5B0C2, #B7C3D7); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#A5B0C2, #D4D9E1); /* Standard syntax */
+}
+
+table#detailsTable .withButton {
+	text-align: center;
+}
+
+table#detailsTable td, table#detailsTable th {
+	padding: 5px;
+}
+table#detailsTable td{
+	font-weight: bold;
+	border: thin solid #A5B0C2;
+	color: gray;
+}
+
+table#detailsTable th {
+	/* background-color: #4b689b; */
+	color: #3a5078;
+	text-align: center;
+	background: -webkit-linear-gradient(#4b689b, #A5B4CD, #4b689b); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#4b689b, #A5B4CD, #4b689b); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#4b689b, #A5B4CD, #4b689b); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#4b689b, #A5B4CD, #4b689b); /* Standard syntax */
 }
 
 .ui-autocomplete {

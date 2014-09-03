@@ -45,6 +45,7 @@
       			{
       				$("#searchCombo").attr("data-card-id", ui.item.crdId);
       				$("#searchCombo").attr("data-verse-id", ui.item.verseId);
+      				setCrdImg(ui.item.verseId);
       			},
       			minLength: 3
         		}
