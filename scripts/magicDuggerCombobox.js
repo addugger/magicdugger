@@ -45,7 +45,10 @@
       			{
       				$("#searchCombo").attr("data-card-id", ui.item.crdId);
       				$("#searchCombo").attr("data-verse-id", ui.item.verseId);
+      				//sets card image to selected card
       				setCrdImg(ui.item.verseId);
+      				//gets number of cards owned from db and sets on page
+      				getCardCounts(ui.item.crdId);
       			},
       			minLength: 3
         		}

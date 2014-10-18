@@ -26,7 +26,7 @@
 		
 		<div id="outerResultsDiv">
 			<div id="innerResultsDiv">
-				<div id="cardImage"><img id="crdImg"></div>
+				<div id="cardImage"><img id="crdImg" src="images/cardback.png"></div>
 				<div id="cardDetails">
 					<table id="detailsTable">
 						<tr>
@@ -43,12 +43,12 @@
 								<td><label>WANT: <span id="wantFoils"></span></label></td>
 							</tr>
 							<tr>
-								<td class="withButton"><button id="addNonFoil">ADD</button></td>
-								<td class="withButton"><button id="addFoil">ADD</button></td>
+								<td class="withButton"><button id="addNonFoil" class="updateButton">ADD</button></td>
+								<td class="withButton"><button id="addFoil" class="updateButton">ADD</button></td>
 							</tr>
 							<tr>
-								<td class="withButton"><button id="removeNonFoil">REMOVE</button></td>
-								<td class="withButton"><button id="removeFoil">REMOVE</button></td>
+								<td class="withButton"><button id="removeNonFoil" class="updateButton">REMOVE</button></td>
+								<td class="withButton"><button id="removeFoil" class="updateButton">REMOVE</button></td>
 							</tr>
 						</tbody>
 					</table>
