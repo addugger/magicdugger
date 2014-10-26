@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<?php 
+		require_once("resources/userCakeV2.0.2/models/config.php");
+		if (!securePage($_SERVER['PHP_SELF'])){die();}
+		require_once("resources/userCakeV2.0.2/models/header.php");
+		?>
+		
 		<meta charset="ISO-8859-1">
 		
 		<link rel="stylesheet" href=//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css>
