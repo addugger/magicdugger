@@ -2,9 +2,8 @@
 <html>
 	<head>
 		<?php 
-		require_once("resources/userCakeV2.0.2/models/config.php");
+		require_once("models/config.php");
 		if (!securePage($_SERVER['PHP_SELF'])){die();}
-		require_once("resources/userCakeV2.0.2/models/header.php");
 		?>
 		
 		<meta charset="ISO-8859-1">
