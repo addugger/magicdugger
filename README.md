@@ -1,4 +1,0 @@
-magicdugger
-===========
-
-Just a cloud-i-fied copy of code for my personal Magic the Gathering website (magicdugger.com).  Warning to anyone checking, even once it's completed, it will really only be useful to myself and my friends that want to look up what I have for trade.  For anyone else, it won't provide much use, at least in my current plan.  That being said, feel free to check it out or grab my code if it looks helpful.  I plan on making use of the newly available MtG api (http://api.mtgdb.info/) to keep an automatically updated mySQL database of all Magic cards, so if you want to do a similar thing, the dbUpdate section might be useful for you.  If anyone does go that route and wants to know how I set up my schema, let me know and I'll get you a copy.  If enough people ask, I'll just put it up on GitHub, but I don't imagine that being an issue at the moment.

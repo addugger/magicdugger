@@ -1150,7 +1150,8 @@ function securePage($uri){
 	//If user is not logged in, deny access
 	elseif(!isUserLoggedIn()) 
 	{
-		header("Location: login.php");
+		//modified by Aaron Dugger to be able to redirect to original page once logged in
+		header("Location: login.php?referer=$uri");
 		return false;
 	}
 	else {
