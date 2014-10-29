@@ -19,13 +19,8 @@ if(!empty($_POST))
 	$displayname = trim($_POST["displayname"]);
 	$password = trim($_POST["password"]);
 	$confirm_pass = trim($_POST["passwordc"]);
-	$captcha = md5($_POST["captcha"]);
 	
 	
-	if ($captcha != $_SESSION['captcha'])
-	{
-		$errors[] = lang("CAPTCHA_FAIL");
-	}
 	if(minMaxRange(5,25,$username))
 	{
 		$errors[] = lang("ACCOUNT_USER_CHAR_LIMIT",array(5,25));
@@ -87,7 +82,7 @@ echo "
 <div id='top'><div id='logo'></div></div>
 <div id='content'>
 <h1>UserCake</h1>
-<h2>Register</h2>
+<h2>Create Account</h2>
 
 <div id='left-nav'>";
 include("left-nav.php");
@@ -121,13 +116,6 @@ echo "
 <p>
 <label>Email:</label>
 <input type='text' name='email' />
-</p>
-<p>
-<label>Security Code:</label>
-<img src='models/captcha.php'>
-</p>
-<label>Enter Security Code:</label>
-<input name='captcha' type='text'>
 </p>
 <label>&nbsp;<br>
 <input type='submit' value='Register'/>
