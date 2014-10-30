@@ -8,8 +8,34 @@ require_once("models/config.php");
 if (!securePage($_SERVER['PHP_SELF'])){die();}
 
 //Prevent the user visiting the logged in page if he/she is already logged in
-if(isUserLoggedIn()) { header("Location: account.php"); die(); }
+if(isUserLoggedIn()) { 
+	//attempt to reroute to page that originally sent the person
+	//to the login page
+	if (isset($_POST["referer"]))
+	{
+		header("Location: $_POST[referer]");
+	}
+	else
+	{
+		header("Location: account.php");
+	}
+	die();
+}
+?>
 
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		
+		<link rel="stylesheet" href=//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css>
+		<link rel="stylesheet" href=css/magicdugger.css>
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+		<script src="models/funcs.js" type="text/javascript"></script>
+	</head>
+
+<?php
 //Forms posted
 if(!empty($_POST))
 {
@@ -75,13 +101,13 @@ if(!empty($_POST))
 	}
 }
 
-require_once("models/header.php");
+include_once("scripts/banner.php");
+include_once("scripts/menubar.php");
 echo "
 <body>
 <div id='wrapper'>
 <div id='top'><div id='logo'></div></div>
 <div id='content'>
-<h1>UserCake</h1>
 <h2>Create Account</h2>
 
 <div id='left-nav'>";
@@ -96,30 +122,54 @@ echo resultBlock($errors,$successes);
 echo "
 <div id='regbox'>
 <form name='newUser' action='".$_SERVER['PHP_SELF']."' method='post'>
-
-<p>
+<table>
+<tr>
+<td>
 <label>User Name:</label>
+</td>
+<td>
 <input type='text' name='username' />
-</p>
-<p>
+</td>
+</tr>
+<tr>
+<td>
 <label>Display Name:</label>
+</td>
+<td>
 <input type='text' name='displayname' />
-</p>
-<p>
+</td>
+</tr>
+<tr>
+<td>
 <label>Password:</label>
+</td>
+<td>
 <input type='password' name='password' />
-</p>
-<p>
+</td>
+</tr>
+<tr>
+<td>
 <label>Confirm:</label>
+</td>
+<td>
 <input type='password' name='passwordc' />
-</p>
-<p>
+</td>
+</tr>
+<tr>
+<td>
 <label>Email:</label>
+</td>
+<td>
 <input type='text' name='email' />
-</p>
-<label>&nbsp;<br>
+</td>
+</tr>
+<tr>
+<td>
 <input type='submit' value='Register'/>
-</p>
+</td>
+<td></td>
+</tr>
+</table>
 
 </form>
 </div>

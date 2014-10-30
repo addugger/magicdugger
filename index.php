@@ -9,56 +9,64 @@
 		<meta charset="ISO-8859-1">
 		
 		<link rel="stylesheet" href=//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css>
-		<link rel="stylesheet" href=css/combobox.css>
 		<link rel="stylesheet" href=css/magicdugger.css>
 		
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
-		<script src="scripts/magicDuggerCombobox.js"></script>
-		<script src="index.js"></script>
 		
 		<title>MagicDugger</title>
 	</head>
 	<body>
 		<?php include_once("scripts/banner.php")?>
 		<?php include_once("scripts/menubar.php")?>
+
+		<?php include("left-nav.php");?>
 		
-		<div id="searchDiv">
-			<div class="ui-widget">
-				<select id="searchCombo"></select>
-			</div>
-		</div>
+		<h1>Welcome To MagicDugger.com!</h1>
 		
-		<div id="outerResultsDiv">
-			<div id="innerResultsDiv">
-				<div id="cardImage"><img id="crdImg" src="images/cardback.png"></div>
-				<div id="cardDetails">
-					<table id="detailsTable">
-						<tr>
-							<th>NON FOILS</th>
-							<th>FOILS</th>
-						</tr>
-						<tbody>
-							<tr>
-								<td><label>HAVE: <span id="haveNonFoils"></span></label></td>
-								<td><label>HAVE: <span id="haveFoils"></span></label></td>
-							</tr>
-							<tr>
-								<td><label>WANT: <span id="wantNonFoils"></span></label></td>
-								<td><label>WANT: <span id="wantFoils"></span></label></td>
-							</tr>
-							<tr>
-								<td class="withButton"><button id="addNonFoil" class="updateButton">ADD</button></td>
-								<td class="withButton"><button id="addFoil" class="updateButton">ADD</button></td>
-							</tr>
-							<tr>
-								<td class="withButton"><button id="removeNonFoil" class="updateButton">REMOVE</button></td>
-								<td class="withButton"><button id="removeFoil" class="updateButton">REMOVE</button></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
+		<div id="textcontent">
+			<p>This page currently just allows users to check what cards I have/want in my
+			Magic the Gathering collection, but I have thoughts of many things I may add one
+			day:
+				<ul>
+					<li>Allow users to store their own card databases here as well</li>
+					<li>Adding pricing information</li>
+					<li>Building in a trading application so people could build up/propose a trade with me</li>
+					<li>Build a deckbuilding/testing application, though this is a pretty long shot of a goal
+						unless I lose my job or someone offers to pay me to create such a thing...or you know...
+						all my friends move away and my wife divorces me.  One way or another, I would need some
+						real time for this.
+					</li>
+				</ul>
+				<p>The main thing I wanted to do with this homepage for now was just give a shoutout to a couple
+					opensource projects I've been pulling from for this page:
+					<ul>
+						<li>First off, <a href=api.mtgdb.info">api.mtgdb.info</a> is a web service that returns
+						JSON data of Magic cards/sets/etc.  I had been trying to figure out the best way to keep
+						my own database up to date with all the card/set information, and this service became
+						available right before I really started working on the site.  It made it much easier
+						than the other options I had been thinking about.  Using their api, I was able to set
+						things up such that I can automatically check for new sets and update my card database.
+						</li>
+						<li>Also, I made use of <a href="http://usercake.com/">Usercake</a> for my user/page
+						privilege management system.  It's been super easy to work with, and I'm very greatful
+						I didn't have to develop my own privilege management system.
+						</li>
+						<li>For the menubar, I used Dynamic Drive's
+						<a href="http://www.dynamicdrive.com/dynamicindex1/ddsmoothmenu.htm">DDSmoothMenu</a>.
+						<li>This one's not exactly unique or unknown (more like expected), but let's give it up for
+						<a href="jquery.com">jQuery</a> for being awesome!
+						</li>
+						<li>I apologize if I missed anyone.  It doesn't mean you're not appreciated, it just means
+						I'm very forgetful.
+						</li>
+						<li>Also, as an aside, the source for my page is available
+						<a href="https://github.com/addugger/magicdugger">here</a>.  Most of it is generally useless
+						to most people, but the section where I update the database could potentially be useful for
+						someone looking to keep a similar database of all the cards.
+						</li>
+					</ul>
+					
 		</div>
 	</body>
 </html>

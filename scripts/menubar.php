@@ -22,5 +22,7 @@ $(document).ready(function(){
 <div id="menubar" class="ddsmoothmenu">
 	<ul>
 		<li><a href="/MagicDugger">Home</a></li>
+		<li><a href=/MagicDugger/viewCards.php>View</a><li>
+		<li><a href=/MagicDugger/viewUpdateCards.php>Update</a></li>
 	</ul>
 </div>

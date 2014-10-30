@@ -6,6 +6,7 @@ body {
 	background: -moz-linear-gradient(right, lightgray, #606060 ); /* For Firefox 3.6 to 15 */
 	background: linear-gradient(to right, lightgray , #606060 ); /* Standard syntax */
 	margin: 0px;
+	font-family: Verdana, Geneva, sans-serif;
 }
 
 button {
@@ -37,10 +38,22 @@ button:active:not([disabled]) {
 	background: linear-gradient(#D1E8FF, #666666, #D1E8FF); /* Standard syntax */
 }
 
+div#textcontent {
+	background-color: #c0d6d6;
+	margin: 10px 10px 10px 10px;
+	clear:both;
+	width: 700px;
+	display: inline-block;
+}
+
+div#textcontent p {
+	padding-left: 10px;
+}
+
 div#innerResultsDiv {
 	margin-left: auto;
 	margin-right: auto;
-	width: 500px;
+	width: 600px;
 }
 
 div#outerResultsDiv {
@@ -58,6 +71,7 @@ div#innerResultsDiv #cardDetails {
 	display: inline;
 	margin: 20px;
 	float: right;
+	vertical-align: middle;
 }
 
 div#searchDiv {
@@ -86,6 +100,10 @@ div#searchDiv .custom-combobox-input {
 	width: 600px;
 }
 
+h2 {
+	padding-left: 60px;
+}
+
 table#detailsTable {
 	border-collapse: collapse;
 	font-family: Verdana, Geneva, sans-serif;
@@ -93,6 +111,7 @@ table#detailsTable {
 	background: -o-linear-gradient(#A5B0C2, #B7C3D7); /* For Opera 11.1 to 12.0 */
 	background: -moz-linear-gradient(#A5B0C2, #B7C3D7); /* For Firefox 3.6 to 15 */
 	background: linear-gradient(#A5B0C2, #D4D9E1); /* Standard syntax */
+	border-style: solid;
 }
 
 table#detailsTable .withButton {
@@ -101,6 +120,8 @@ table#detailsTable .withButton {
 
 table#detailsTable td, table#detailsTable th {
 	padding: 5px;
+	text-align: middle;
+	width: 150px;
 }
 table#detailsTable td{
 	font-weight: bold;
