@@ -38,26 +38,12 @@ button:active:not([disabled]) {
 	background: linear-gradient(#D1E8FF, #666666, #D1E8FF); /* Standard syntax */
 }
 
-div#textcontent {
-	background-color: #c0d6d6;
-	margin: 10px 10px 10px 10px;
-	clear:both;
-	width: 700px;
-	display: inline-block;
-}
-
-div#textcontent p {
-	padding-left: 10px;
-}
-
 div#innerResultsDiv {
+	width: 600px;
+	display: table;
 	margin-left: auto;
 	margin-right: auto;
-	width: 600px;
-}
-
-div#outerResultsDiv {
-	width: 100%;
+	margin-bottom: 25px;
 }
 
 div#innerResultsDiv #cardImage,
@@ -68,19 +54,26 @@ div#innerResultsDiv #crdImg {
 }
 
 div#innerResultsDiv #cardDetails {
-	display: inline;
-	margin: 20px;
-	float: right;
+	display: table-cell;
+	text-align: right;
 	vertical-align: middle;
 }
 
+div#main {
+	overflow: hidden;
+	background-color: #c0d6d6;
+	margin: 30px;
+	width: 700px;
+	border-radius: 5px;
+	padding: 10px;
+}
+
 div#searchDiv {
-	text-align: center;
 	margin-top: 50px;
-	margin-bottom: 100px;
+	margin-bottom: 50px;
 	font-size: 30px;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	vertical-align: center;
+	text-align: center;
 }
 
 div#searchDiv #searchButton {
@@ -98,6 +91,18 @@ div#searchDiv #searchCombo {
 
 div#searchDiv .custom-combobox-input {
 	width: 600px;
+}
+
+div#textcontent {
+	font-weight: bold;
+	width: 700px;
+	opacity: .5;
+	filter: alpha(opacity=60); /* For IE8 and earlier */
+	border-radius: 5px;
+}
+
+div#textcontent p {
+	padding-left: 10px;
 }
 
 h2 {
@@ -120,7 +125,7 @@ table#detailsTable .withButton {
 
 table#detailsTable td, table#detailsTable th {
 	padding: 5px;
-	text-align: middle;
+	text-align: center;
 	width: 150px;
 }
 table#detailsTable td{

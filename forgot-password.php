@@ -6,7 +6,21 @@ http://usercake.com
 
 require_once("models/config.php");
 if (!securePage($_SERVER['PHP_SELF'])){die();}
+?>
 
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+<link rel="stylesheet" href=//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css>
+<link rel="stylesheet" href=css/magicdugger.css>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+<script src="models/funcs.js" type="text/javascript"></script>
+</head>
+
+<?php
 //User has confirmed they want their password changed 
 if(!empty($_GET["confirm"]))
 {
@@ -173,39 +187,48 @@ if(!empty($_POST))
 	}
 }
 
-require_once("models/header.php");
+include_once("scripts/banner.php");
+include_once("scripts/menubar.php");
 echo "
 <body>
 <div id='wrapper'>
-<div id='top'><div id='logo'></div></div>
-<div id='content'>
-<h1>UserCake</h1>
-<h2>Forgot Password</h2>
-<div id='left-nav'>";
+<div id='top'></div>";
 
 include("left-nav.php");
 
 echo "
-</div>
-<div id='main'>";
+<div id='main'>
+<h2>Forgot Password</h2>";
 
 echo resultBlock($errors,$successes);
 
 echo "
 <div id='regbox'>
 <form name='newLostPass' action='".$_SERVER['PHP_SELF']."' method='post'>
-<p>
+<table>
+<tr>
+<td>
 <label>Username:</label>
+</td>
+<td>
 <input type='text' name='username' />
-</p>
-<p>    
-<label>Email:</label>
-<input type='text' name='email' />
-</p>
-<p>
-<label>&nbsp;</label>
+</td>
+</tr>
+<tr>
+<td>
+<label>Password:</label>
+</td>
+<td>
+<input type='password' name='password' />
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
 <input type='submit' value='Submit' class='submit' />
-</p>
+</td>
+</tr>
+</table>
 </form>
 </div>
 </div>

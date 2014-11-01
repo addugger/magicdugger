@@ -106,16 +106,13 @@ include_once("scripts/menubar.php");
 echo "
 <body>
 <div id='wrapper'>
-<div id='top'><div id='logo'></div></div>
-<div id='content'>
-<h2>Create Account</h2>
+<div id='top'></div>";
 
-<div id='left-nav'>";
 include("left-nav.php");
-echo "
-</div>
 
-<div id='main'>";
+echo "
+<div id='main'>
+<h2>Create Account</h2>";
 
 echo resultBlock($errors,$successes);
 
@@ -164,10 +161,10 @@ echo "
 </td>
 </tr>
 <tr>
+<td></td>
 <td>
 <input type='submit' value='Register'/>
 </td>
-<td></td>
 </tr>
 </table>
 

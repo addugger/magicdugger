@@ -11,23 +11,29 @@ echo "
 <style>
 		#left-nav {
 			font-family: Impact, Charcoal, sans-serif;
+			margin-top: 30px;
+			height: 1500px;
 		}
 		
 		#left-nav ul {
 			list-style-type: none;
-			padding-left: 20px;
-			padding-right: 40px;
+			padding-left: 10px;
+			padding-right: 50px;
 			width: 140px;
 		}
 		#left-nav li {
 			background-color: lightyellow;
-			padding: 3px;
 			margin: 3px;
 			text-align: center;
 		}
 		#left-nav a {
 			text-decoration: none;
-			color: rgb(126, 126, 126);
+			color: #7E7E7E;
+			display: block;
+			padding: 3px;
+		}
+		#left-nav a:hover {
+			background-color: #B4ADAD;
 		}
 </style>";
 
@@ -59,7 +65,6 @@ if(isUserLoggedIn()) {
 else {
 	echo "
 	<ul>
-	<li><a href='index.php'>Home</a></li>
 	<li><a href='login.php'>Login</a></li>
 	<li><a href='register.php'>Create Account</a></li>
 	<li><a href='forgot-password.php'>Forgot Password</a></li>";

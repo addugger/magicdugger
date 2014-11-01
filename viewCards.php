@@ -25,32 +25,34 @@
 		
 		<?php include("left-nav.php");?>
 		
-		<div id="searchDiv">
-			<div class="ui-widget">
-				<select id="searchCombo"></select>
+		<div id="main">
+			<div id="searchDiv">
+				<div class="ui-widget">
+					<select id="searchCombo"></select>
+				</div>
 			</div>
-		</div>
-		
-		<div id="outerResultsDiv">
-			<div id="innerResultsDiv">
-				<div id="cardImage"><img id="crdImg" src="images/cardback.png"></div>
-				<div id="cardDetails">
-					<table id="detailsTable">
-						<tr>
-							<th>NON FOILS</th>
-							<th>FOILS</th>
-						</tr>
-						<tbody>
+			
+			<div id="outerResultsDiv">
+				<div id="innerResultsDiv">
+					<div id="cardImage"><img id="crdImg" src="images/cardback.png"></div>
+					<div id="cardDetails">
+						<table id="detailsTable">
 							<tr>
-								<td><label>HAVE: <span id="haveNonFoils"></span></label></td>
-								<td><label>HAVE: <span id="haveFoils"></span></label></td>
+								<th>NON FOILS</th>
+								<th>FOILS</th>
 							</tr>
-							<tr>
-								<td><label>WANT: <span id="wantNonFoils"></span></label></td>
-								<td><label>WANT: <span id="wantFoils"></span></label></td>
-							</tr>
-						</tbody>
-					</table>
+							<tbody>
+								<tr>
+									<td><label>HAVE: <span id="haveNonFoils"></span></label></td>
+									<td><label>HAVE: <span id="haveFoils"></span></label></td>
+								</tr>
+								<tr>
+									<td><label>WANT: <span id="wantNonFoils"></span></label></td>
+									<td><label>WANT: <span id="wantFoils"></span></label></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -22,22 +22,23 @@
 
 		<?php include("left-nav.php");?>
 		
-		<h1>Welcome To MagicDugger.com!</h1>
-		
-		<div id="textcontent">
-			<p>This page currently just allows users to check what cards I have/want in my
-			Magic the Gathering collection, but I have thoughts of many things I may add one
-			day:
-				<ul>
-					<li>Allow users to store their own card databases here as well</li>
-					<li>Adding pricing information</li>
-					<li>Building in a trading application so people could build up/propose a trade with me</li>
-					<li>Build a deckbuilding/testing application, though this is a pretty long shot of a goal
-						unless I lose my job or someone offers to pay me to create such a thing...or you know...
-						all my friends move away and my wife divorces me.  One way or another, I would need some
-						real time for this.
-					</li>
-				</ul>
+		<div id="main">
+			<h1 style="text-align: center;">Welcome To MagicDugger.com!</h1>
+			<div id="textcontent">
+				<p>This page currently just allows users to check what cards I have/want in my
+				Magic the Gathering collection, but I have thoughts of many things I may add one
+				day:
+					<ul>
+						<li>Allow users to store their own card databases here as well</li>
+						<li>Adding pricing information</li>
+						<li>Building in a trading application so people could build up/propose a trade with me</li>
+						<li>Build a deckbuilding/testing application, though this is a pretty long shot of a goal
+							unless I lose my job or someone offers to pay me to create such a thing...or you know...
+							all my friends move away and my wife divorces me.  One way or another, I would need some
+							real time for this.
+						</li>
+					</ul>
+				</p>
 				<p>The main thing I wanted to do with this homepage for now was just give a shoutout to a couple
 					opensource projects I've been pulling from for this page:
 					<ul>
@@ -66,7 +67,8 @@
 						someone looking to keep a similar database of all the cards.
 						</li>
 					</ul>
-					
+				</p>
+			</div>
 		</div>
 	</body>
 </html>

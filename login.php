@@ -120,16 +120,13 @@ include_once("scripts/menubar.php");
 echo "
 <body>
 <div id='wrapper'>
-<div id='top'><div id='logo'></div></div>
-<div id='content'>
-<h2>Login</h2>
-<div id='left-nav' style='float:left'>";
-
+<div id='top'></div>";
+							
 include("left-nav.php");
 
 echo "
-</div>
-<div id='main'>";
+<div id='main'>
+<h2>Login</h2>";
 
 echo resultBlock($errors,$successes);
 
@@ -141,18 +138,30 @@ if (isset($_REQUEST["referer"]))
 	echo("<input type='hidden' name='referer' value='$_REQUEST[referer]'>");
 }
 echo "
-<p>
+<table>
+<tr>
+<td>
 <label>Username:</label>
+</td>
+<td>
 <input type='text' name='username' />
-</p>
-<p>
+</td>
+</tr>
+<tr>
+<td>
 <label>Password:</label>
+</td>
+<td>
 <input type='password' name='password' />
-</p>
-<p>
-<label>&nbsp;</label>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
 <input type='submit' value='Login' class='submit' />
-</p>
+</td>
+</tr>
+</table>
 </form>
 </div>
 </div>
