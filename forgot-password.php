@@ -191,7 +191,6 @@ include_once("scripts/banner.php");
 include_once("scripts/menubar.php");
 echo "
 <body>
-<div id='wrapper'>
 <div id='top'></div>";
 
 include("left-nav.php");
@@ -216,10 +215,10 @@ echo "
 </tr>
 <tr>
 <td>
-<label>Password:</label>
+<label>Email:</label>
 </td>
 <td>
-<input type='password' name='password' />
+<input type='text' name='email' />
 </td>
 </tr>
 <tr>
@@ -233,7 +232,6 @@ echo "
 </div>
 </div>
 <div id='bottom'></div>
-</div>
 </body>
 </html>";
 

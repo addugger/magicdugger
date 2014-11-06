@@ -6,7 +6,21 @@ http://usercake.com
 
 require_once("models/config.php");
 if (!securePage($_SERVER['PHP_SELF'])){die();}
+?>
 
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		
+		<link rel="stylesheet" href=//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css>
+		<link rel="stylesheet" href=css/magicdugger.css>
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+		<script src="models/funcs.js" type="text/javascript"></script>
+	</head>
+
+<?php
 //Forms posted
 if(!empty($_POST))
 {
@@ -21,21 +35,17 @@ if(!empty($_POST))
 
 $userData = fetchAllUsers(); //Fetch information for all users
 
-require_once("models/header.php");
+include_once("scripts/banner.php");
+include_once("scripts/menubar.php");
 echo "
 <body>
-<div id='wrapper'>
-<div id='top'><div id='logo'></div></div>
-<div id='content'>
-<h1>UserCake</h1>
-<h2>Admin Users</h2>
-<div id='left-nav'>";
+<div id='top'></div></div>";
 
 include("left-nav.php");
 
 echo "
-</div>
-<div id='main'>";
+<div id='main'>
+<h2>Admin Users</h2>";
 
 echo resultBlock($errors,$successes);
 
@@ -75,7 +85,6 @@ echo "
 </form>
 </div>
 <div id='bottom'></div>
-</div>
 </body>
 </html>";
 

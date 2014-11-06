@@ -25,4 +25,17 @@ div#banner {
 
 <div id="banner">
 	<a href=/MagicDugger><img id="icon" src="images/magicdugger_icon.png" alt="Magic Dugger icon" height="200" width="200"></a>
+	<p style="margin-left: 20px; font-size: 15px; font-weight: bold; color: #717178;">Welcome, 
+	<?php
+	if (isUserLoggedIn())
+	{
+		echo $loggedInUser->username;
+	}
+	else
+	{
+		echo "guest";
+	}
+	echo "!"
+	?>
+	</p>
 </div>

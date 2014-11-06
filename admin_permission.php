@@ -14,7 +14,21 @@ if(!permissionIdExists($permissionId)){
 }
 
 $permissionDetails = fetchPermissionDetails($permissionId); //Fetch information specific to permission level
+?>
 
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		
+		<link rel="stylesheet" href=//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css>
+		<link rel="stylesheet" href=css/magicdugger.css>
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+		<script src="models/funcs.js" type="text/javascript"></script>
+	</head>
+
+<?php
 //Forms posted
 if(!empty($_POST)){
 	
@@ -103,28 +117,24 @@ $permissionUsers = fetchPermissionUsers($permissionId); //Retrieve list of users
 $userData = fetchAllUsers(); //Fetch all users
 $pageData = fetchAllPages(); //Fetch all pages
 
-require_once("models/header.php");
+include_once("scripts/banner.php");
+include_once("scripts/menubar.php");
 echo "
 <body>
-<div id='wrapper'>
-<div id='top'><div id='logo'></div></div>
-<div id='content'>
-<h1>UserCake</h1>
-<h2>Admin Permissions</h2>
-<div id='left-nav'>";
+<div id='top'></div>";
 
 include("left-nav.php");
 
 echo "
-</div>
-<div id='main'>";
+<div id='main'>
+<h2>Admin Permissions</h2>";
 
 echo resultBlock($errors,$successes);
 
 echo "
 <form name='adminPermission' action='".$_SERVER['PHP_SELF']."?id=".$permissionId."' method='post'>
 <table class='admin'>
-<tr><td>
+<tr><td style='vertical-align: top;'>
 <h3>Permission Information</h3>
 <div id='regbox'>
 <p>
@@ -138,7 +148,10 @@ echo "
 <label>Delete:</label>
 <input type='checkbox' name='delete[".$permissionDetails['id']."]' id='delete[".$permissionDetails['id']."]' value='".$permissionDetails['id']."'>
 </p>
-</div></td><td>
+<p>
+<input type='submit' value='Update' class='submit' />
+</p>
+</div></td><td style='vertical-align: top;'>
 <h3>Permission Membership</h3>
 <div id='regbox'>
 <p>
@@ -165,7 +178,7 @@ echo"
 </p>
 </div>
 </td>
-<td>
+<td style='vertical-align: top;'>
 <h3>Permission Access</h3>
 <div id='regbox'>
 <p>
@@ -206,14 +219,9 @@ echo"
 </td>
 </tr>
 </table>
-<p>
-<label>&nbsp;</label>
-<input type='submit' value='Update' class='submit' />
-</p>
 </form>
 </div>
 <div id='bottom'></div>
-</div>
 </body>
 </html>";
 

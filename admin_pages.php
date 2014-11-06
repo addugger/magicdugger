@@ -6,7 +6,21 @@ http://usercake.com
 
 require_once("models/config.php");
 if (!securePage($_SERVER['PHP_SELF'])){die();}
+?>
 
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		
+		<link rel="stylesheet" href=//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css>
+		<link rel="stylesheet" href=css/magicdugger.css>
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+		<script src="models/funcs.js" type="text/javascript"></script>
+	</head>
+
+<?php
 $pages = getPageFiles(); //Retrieve list of pages in root usercake folder
 $dbpages = fetchAllPages(); //Retrieve list of pages in pages table
 $creations = array();
@@ -41,22 +55,18 @@ if (count($deletions) > 0) {
 //Update DB pages
 $dbpages = fetchAllPages();
 
-require_once("models/header.php");
+include_once("scripts/banner.php");
+include_once("scripts/menubar.php");
 
 echo "
 <body>
-<div id='wrapper'>
-<div id='top'><div id='logo'></div></div>
-<div id='content'>
-<h1>UserCake</h1>
-<h2>Admin Pages</h2>
-<div id='left-nav'>";
+<div id='top'></div>";
 
 include("left-nav.php");
 
 echo "
-</div>
 <div id='main'>
+<h2>Admin Pages</h2>
 <table class='admin'>
 <tr><th>Id</th><th>Page</th><th>Access</th></tr>";
 
@@ -89,7 +99,6 @@ echo "
 </table>
 </div>
 <div id='bottom'></div>
-</div>
 </body>
 </html>";
 

@@ -6,7 +6,21 @@ http://usercake.com
 
 require_once("models/config.php");
 if (!securePage($_SERVER['PHP_SELF'])){die();}
+?>
 
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		
+		<link rel="stylesheet" href=//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css>
+		<link rel="stylesheet" href=css/magicdugger.css>
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+		<script src="models/funcs.js" type="text/javascript"></script>
+	</head>
+
+<?php
 //Forms posted
 if(!empty($_POST))
 {
@@ -134,46 +148,62 @@ if(!empty($_POST))
 $languages = getLanguageFiles(); //Retrieve list of language files
 $templates = getTemplateFiles(); //Retrieve list of template files
 $permissionData = fetchAllPermissions(); //Retrieve list of all permission levels
-require_once("models/header.php");
+include_once("scripts/banner.php");
+include_once("scripts/menubar.php");
 
 echo "
 <body>
-<div id='wrapper'>
-<div id='top'><div id='logo'></div></div>
-<div id='content'>
-<h1>UserCake</h1>
-<h2>Admin Configuration</h2>
-<div id='left-nav'>";
+<div id='top'></div>";
 
 include("left-nav.php");
 
 echo "
-</div>
-<div id='main'>";
+<div id='main'>
+<h2>Admin Configuration</h2>";
 
 echo resultBlock($errors,$successes);
 
 echo "
 <div id='regbox'>
 <form name='adminConfiguration' action='".$_SERVER['PHP_SELF']."' method='post'>
-<p>
+<table>
+<tr>
+<td>
 <label>Website Name:</label>
+</td>
+<td>
 <input type='text' name='settings[".$settings['website_name']['id']."]' value='".$websiteName."' />
-</p>
-<p>
+</td>
+</tr>
+<tr>
+<td>
 <label>Website URL:</label>
+</td>
+<td>
 <input type='text' name='settings[".$settings['website_url']['id']."]' value='".$websiteUrl."' />
-</p>
-<p>
+</td>
+</tr>
+<tr>
+<td>
 <label>Email:</label>
+</td>
+<td>
 <input type='text' name='settings[".$settings['email']['id']."]' value='".$emailAddress."' />
-</p>
-<p>
+</td>
+</tr>
+<tr>
+<td>
 <label>Activation Threshold:</label>
+</td>
+<td>
 <input type='text' name='settings[".$settings['resend_activation_threshold']['id']."]' value='".$resend_activation_threshold."' />
-</p>
-<p>
+</td>
+</tr>
+<tr>
+<td>
 <label>Language:</label>
+</td>
+<td>
 <select name='settings[".$settings['language']['id']."]'>";
 
 //Display language options
@@ -188,9 +218,13 @@ foreach ($languages as $optLang){
 
 echo "
 </select>
-</p>
-<p>
+</td>
+</tr>
+<tr>
+<td>
 <label>Email Activation:</label>
+</td>
+<td>
 <select name='settings[".$settings['activation']['id']."]'>";
 
 //Display email activation options
@@ -207,9 +241,13 @@ else {
 	</select>";
 }
 
-echo "</p>
-<p>
+echo "</td>
+</tr>
+<tr>
+<td>
 <label>Template:</label>
+</td>
+<td>
 <select name='settings[".$settings['template']['id']."]'>";
 
 //Display template options
@@ -224,13 +262,19 @@ foreach ($templates as $temp){
 
 echo "
 </select>
-</p>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
 <input type='submit' name='Submit' value='Submit' />
+</td>
+</tr>
+</table>
 </form>
 </div>
 </div>
 <div id='bottom'></div>
-</div>
 </body>
 </html>";
 

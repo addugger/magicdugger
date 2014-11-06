@@ -14,7 +14,21 @@ if(!pageIdExists($pageId)){
 }
 
 $pageDetails = fetchPageDetails($pageId); //Fetch information specific to page
+?>
 
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		
+		<link rel="stylesheet" href=//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css>
+		<link rel="stylesheet" href=css/magicdugger.css>
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+		<script src="models/funcs.js" type="text/javascript"></script>
+	</head>
+
+<?php
 //Forms posted
 if(!empty($_POST)){
 	$update = 0;
@@ -70,22 +84,18 @@ if(!empty($_POST)){
 $pagePermissions = fetchPagePermissions($pageId);
 $permissionData = fetchAllPermissions();
 
-require_once("models/header.php");
+include_once("scripts/banner.php");
+include_once("scripts/menubar.php");
 
 echo "
 <body>
-<div id='wrapper'>
-<div id='top'><div id='logo'></div></div>
-<div id='content'>
-<h1>UserCake</h1>
-<h2>Admin Page</h2>
-<div id='left-nav'>";
+<div id='top'></div>";
 
 include("left-nav.php");
 
 echo "
-</div>
-<div id='main'>";
+<div id='main'>
+<h2>Admin Page</h2>";
 
 echo resultBlock($errors,$successes);
 
@@ -93,7 +103,8 @@ echo "
 <form name='adminPage' action='".$_SERVER['PHP_SELF']."?id=".$pageId."' method='post'>
 <input type='hidden' name='process' value='1'>
 <table class='admin'>
-<tr><td>
+<tr>
+<td style='vertical-align: top;'>
 <h3>Page Information</h3>
 <div id='regbox'>
 <p>
@@ -117,7 +128,7 @@ else {
 
 echo "
 </p>
-</div></td><td>
+</div></td><td style='vertical-align: top;'>
 <h3>Page Access</h3>
 <div id='regbox'>
 <p>
@@ -153,7 +164,6 @@ echo"
 </form>
 </div>
 <div id='bottom'></div>
-</div>
 </body>
 </html>";
 

@@ -14,7 +14,21 @@ if(!userIdExists($userId)){
 }
 
 $userdetails = fetchUserDetails(NULL, NULL, $userId); //Fetch user details
+?>
 
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		
+		<link rel="stylesheet" href=//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css>
+		<link rel="stylesheet" href=css/magicdugger.css>
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+		<script src="models/funcs.js" type="text/javascript"></script>
+	</head>
+
+<?php
 //Forms posted
 if(!empty($_POST))
 {	
@@ -140,22 +154,18 @@ if(!empty($_POST))
 $userPermission = fetchUserPermissions($userId);
 $permissionData = fetchAllPermissions();
 
-require_once("models/header.php");
+include_once("scripts/banner.php");
+include_once("scripts/menubar.php");
 
 echo "
 <body>
-<div id='wrapper'>
-<div id='top'><div id='logo'></div></div>
-<div id='content'>
-<h1>UserCake</h1>
-<h2>Admin User</h2>
-<div id='left-nav'>";
+<div id='top'></div>";
 
 include("left-nav.php");
 
 echo "
-</div>
-<div id='main'>";
+<div id='main'>
+<h2>Admin User</h2>";
 
 echo resultBlock($errors,$successes);
 
@@ -164,24 +174,44 @@ echo "
 <table class='admin'><tr><td>
 <h3>User Information</h3>
 <div id='regbox'>
-<p>
+<table>
+<tr>
+<td>
 <label>ID:</label>
+</td>
+<td>
 ".$userdetails['id']."
-</p>
-<p>
+</td>
+</tr>
+<tr>
+<td>
 <label>Username:</label>
+</td>
+<td>
 ".$userdetails['user_name']."
-</p>
-<p>
+</td>
+</tr>
+<tr>
+<td>
 <label>Display Name:</label>
+</td>
+<td>
 <input type='text' name='display' value='".$userdetails['display_name']."' />
-</p>
-<p>
+</td>
+</tr>
+<tr>
+<td>
 <label>Email:</label>
+</td>
+<td>
 <input type='text' name='email' value='".$userdetails['email']."' />
-</p>
-<p>
-<label>Active:</label>";
+</td>
+</tr>
+<tr>
+<td>
+<label>Active:</label>
+</td>
+<td>";
 
 //Display activation link, if account inactive
 if ($userdetails['active'] == '1'){
@@ -197,17 +227,29 @@ else{
 }
 
 echo "
-</p>
-<p>
+</td>
+</tr>
+<tr>
+<td>
 <label>Title:</label>
+</td>
+<td>
 <input type='text' name='title' value='".$userdetails['title']."' />
-</p>
-<p>
+</td>
+</tr>
+<tr>
+<td>
 <label>Sign Up:</label>
+</td>
+<td>
 ".date("j M, Y", $userdetails['sign_up_stamp'])."
-</p>
-<p>
-<label>Last Sign In:</label>";
+</td>
+</tr>
+<tr>
+<td>
+<label>Last Sign In:</label>
+</td>
+<td>";
 
 //Last sign in, interpretation
 if ($userdetails['last_sign_in_stamp'] == '0'){
@@ -218,18 +260,27 @@ else {
 }
 
 echo "
-</p>
-<p>
+</td>
+</tr>
+<tr>
+<td>
 <label>Delete:</label>
-<input type='checkbox' name='delete[".$userdetails['id']."]' id='delete[".$userdetails['id']."]' value='".$userdetails['id']."'>
-</p>
-<p>
-<label>&nbsp;</label>
-<input type='submit' value='Update' class='submit' />
-</p>
-</div>
 </td>
 <td>
+<input type='checkbox' name='delete[".$userdetails['id']."]' id='delete[".$userdetails['id']."]' value='".$userdetails['id']."'>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<input type='submit' value='Update' class='submit' />
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td style='width: 0%; height: 100%; border-left: thin solid darkgray;'></td>
+<td style='vertical-align:top;'>
 <h3>Permission Membership</h3>
 <div id='regbox'>
 <p>Remove Permission:";
@@ -258,7 +309,6 @@ echo"
 </form>
 </div>
 <div id='bottom'></div>
-</div>
 </body>
 </html>";
 

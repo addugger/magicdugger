@@ -105,7 +105,6 @@ include_once("scripts/banner.php");
 include_once("scripts/menubar.php");
 echo "
 <body>
-<div id='wrapper'>
 <div id='top'></div>";
 
 include("left-nav.php");
@@ -173,7 +172,6 @@ echo "
 
 </div>
 <div id='bottom'></div>
-</div>
 </body>
 </html>";
 ?>
