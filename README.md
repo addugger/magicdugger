@@ -7,7 +7,7 @@ day:
 		<li>Building in a trading application so people could build up/propose a trade with me</li>
 		<li>Build a deckbuilding/testing application, though this is a pretty long shot of a goal
 			unless I lose my job or someone offers to pay me to create such a thing...or you know...
-			all my friends move away and my wife dies in a terrible Netflix accident.  One way or
+			all my friends move away and my wife dies in a terrible knitting accident.  One way or
 			another, I would need some real time for this.
 		</li>
 	</ul>
