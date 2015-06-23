@@ -12,7 +12,7 @@ day:
 		</li>
 	</ul>
 </p>
-<p>The main thing I wanted to do with this homepage for now was just give a shoutout to a couple
+<p>The main thing I wanted to do with this readme for now was just give a shoutout to a couple
 	opensource projects I've been pulling from for this page:
 	<ul>
 		<li>First off, <a href"api.mtgdb.info">api.mtgdb.info</a> is a web service that returns
@@ -35,7 +35,7 @@ day:
 		I'm very forgetful.
 		</li>
 		<li>Also, as an aside, the source for my page is available
-		<a href="https://github.com/addugger/magicdugger">here</a>.  Most of it is generally useless
+		<a href="https://github.com/addugger/magicdugger">here</a>.  Most of it isn't generically useful
 		to most people, but the section where I update the database could potentially be useful for
 		someone looking to keep a similar database of all the cards.
 		</li>
